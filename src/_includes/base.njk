@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basket CSS Framework</title>
+
+    <meta name="author" content="Omar Quazi">
+    <meta name="description" content="A simple, minimalistic CSS framework">
+
+    <link rel="stylesheet" href="/assets/css/basket.min.css">
+    <link rel="stylesheet" href="/assets/css/termynal.min.css">
+
+    <style>
+        .navDownloadButton {
+            background: var(--dark);
+        }
+        .navDownloadButton:hover {
+            background: var(--dark-hover) !important;
+        }
+    </style>
+
+    
+
+</head>
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-blue">
+            <a href="/" class="navbar-brand">
+                <img src="/assets/imgs/basket-logo-white.png" width="30" height="30" />                
+                Basket
+            </a>
+            <a class="navbar-collapse">&#9776;</a>
+            <div class="navbar-items navbar-right">
+                <a href="/docs/" class="active">Documentation</a>
+                <a href="/docs/examples">Examples</a>
+                <a target="_blank" class="navDownloadButton latest-version" href="https://github.com/Basket-CSS/basket">Repo</a>
+            </div>
+        </nav>
+
+    </header>
+
+
+    {{ content | safe }}
+
+    <script src="/assets/js/basket.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="https://rawgit.com/hippich/bower-semver/master/semver.min.js"></script>
+
+    <script src="/assets/js/termynal.min.js"></script>
+    <script>
+
+        let gitHubPath = 'Basket-CSS/basket';  // example repo
+        let url = 'https://api.github.com/repos/' + gitHubPath + '/tags';
+        
+        $.get(url).done(function (data) {
+            let versions = data.sort((v1, v2) => {
+                return semver.compare(v2.name, v1.name)
+            });
+            $('.latest-version').text(versions[0].name);
+        });
+
+
+        let termynal = new Termynal('.termynal', { 
+            cursor: "|", 
+            progressLength: 20, 
+            noInit: true
+        });
+
+        termynal.init();
+       
+        
+
+    </script>
+</body>
+</html>

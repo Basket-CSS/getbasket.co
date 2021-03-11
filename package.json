@@ -1,0 +1,15 @@
+{
+  "name": "getbasket.co",
+  "version": "1.0.0",
+  "description": "Basket framework website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Omar Quazi <omar@quazi.co>",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "getbasket": "^1.0.0"
+  }
+}

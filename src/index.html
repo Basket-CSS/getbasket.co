@@ -1,0 +1,175 @@
+---
+layout: "base.njk"
+---
+
+<style>
+
+    #home-container {
+        min-height: 55vh;
+        background: linear-gradient(145deg, var(--blue) 50%, #fff 50%);
+    }
+
+    #right-image {
+        display: flex;
+        align-items: center;
+        min-height: 55vh;
+    }
+
+    @media (max-width: 42.0rem) {
+        #home-container {
+            background: var(--blue);
+        }
+        #right-image {
+            display: none;
+        }
+    }
+
+    .spacer {
+        padding-top: 3em;
+    }
+
+    .termynal {
+        --color-bg: var(--dark);
+        --color-text: white;
+        --color-text-subtle: var(--blue);
+        width: 100% !important;
+        min-height: 500px !important;
+        height: 100% !important;
+    }
+    
+
+</style>
+
+<main>
+    <div id="home-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 text-light">
+                    <h1>Basket Framework</h1>
+                    <p class="lead">
+                        A simple, minimalistic framework.
+                        <br />
+                        Oh, and we support dark mode by default.
+                        <br /><br />
+                    </p>
+                    <p>
+                        <a class="btn btn-dark btn-rounded" href="/docs">Getting Started</a> <a class="btn btn-light btn-rounded" href="https://github.com/Basket-CSS/basket/releases">Download</a>
+                    </p> 
+                </div>
+                <div id="right-image" class="col-6">
+                    <div class="img-responsive">
+                        <img src="/assets/imgs/undraw_static_assets_rpm6.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="display-4">
+                    So why Basket?
+                </p>
+                <p class="lead">
+                    Honestly? Not many reasons, it's like any other framework. At the end of the day, it depends on what you want. 
+                    I know I am supposed to be selling this framework to you, but hopefully you like what you see and not just some marketing bs.
+                </p>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="display-4">
+                    Installation
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <p class="display-5">
+                    jsDelivr
+                </p>
+                <p class="text-muted">You most probably need this one</p>
+            </div>
+            <div class="col-8">
+                
+                <blockquote class="blockquote blockquote-blue">
+                    <p>&lt;!-- Basket CSS --&gt;</p>
+                    <p>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.0.0/dist/basket.min.css" integrity="sha256-RB6Eyql3c/sLFrGm+UkI8TgtwHz907Ww0lTXuYKU/ew=" crossorigin="anonymous"&gt;</p>
+                </blockquote>
+
+                <blockquote class="blockquote blockquote-blue">
+                    <p>&lt;!-- Basket JS --&gt;</p>
+                    <p>&lt;script src="https://cdn.jsdelivr.net/npm/getbasket@1.0.0/dist/basket.min.js" integrity="sha256-JzAWR97Yf75CpYAAcG8Z2r7b0l5Yc6BEvlLTVKqk1AA=" crossorigin="anonymous"&gt;&lt;/script&gt;</p>
+                </blockquote>
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <p class="display-5">
+                    Source
+                </p>
+                <p class="text-muted">Get this if you need to modify the basket framework; add custom colours, remove code you don't need, etc.</p>
+            </div>
+            <div class="col-8">
+                
+                <div class="termynal" data-termynal>
+                    <span data-ty="input">git clone https://github.com/Basket-CSS/basket.git</span>
+                    <span data-ty>Cloning into 'basket'...</span>
+                    <span data-ty>Omitting a bunch of stuff...</span>
+                    <span data-ty="progress"></span>
+                    <span data-ty="input">cd basket</span>
+                    <span data-ty>Now go make as many changes your ❤️'s desires</span>
+                    <span data-ty="input">npm run build</span>
+                    <span data-ty="input">echo "Profit $$$"</span>
+                    <span data-ty>Profit $$$</span>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p class="display-4">
+                    Community
+                </p>
+                <p class="lead">Basket is new and I develop on my free time, so lot of things are still missing. Be patient and slowly but surely, they will be added :)</p>
+                <p class="lead">Want to pitch in and help write code or documentation? Send in a pull request on <a href="https://github.com/Basket-CSS/basket/pulls">GitHub</a>!</p>
+            </div>
+        </div>
+    </div>
+    <div style="padding-top: 30vh;"></div>
+</main>
+
+
+<script>
+    // retrieve the element
+    element = document.getElementById("logo");
+
+    // reset the transition by...
+    element.addEventListener("click", function (e) {
+        e.preventDefault;
+
+        // -> removing the class
+        element.classList.remove("swing-logo");
+
+        // -> triggering reflow /* The actual magic */
+        // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+        // Oops! This won't work in strict mode. Thanks Felis Phasma!
+        // element.offsetWidth = element.offsetWidth;
+        // Do this instead:
+        void element.offsetWidth;
+
+        // -> and re-adding the class
+        element.classList.add("swing-logo");
+    }, false);
+
+   
+
+</script>
+
+
