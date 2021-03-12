@@ -22,6 +22,9 @@ layout: "base.njk"
         #right-image {
             display: none;
         }
+        .expandedRows {
+            flex-direction: column;
+        }
     }
 
     .spacer {
@@ -45,13 +48,12 @@ layout: "base.njk"
         margin-bottom: -5em;
     }
 
-
 </style>
 
 <main>
     <div id="home-container">
         <div class="container">
-            <div class="row">
+            <div class="row expandedRows">
                 <div class="col-6 text-light">
                     <h1>Basket Framework</h1>
                     <p class="lead">
@@ -93,7 +95,7 @@ layout: "base.njk"
                 </p>
             </div>
         </div>
-        <div class="row">
+        <div class="row expandedRows">
             <div class="col-4">
                 <p class="display-5">
                     jsDelivr
@@ -121,7 +123,7 @@ layout: "base.njk"
             </div>
         </div>
 
-        <div class="row">
+        <div class="row expandedRows">
             <div class="col-4">
                 <p class="display-5">
                     Source
@@ -146,13 +148,16 @@ layout: "base.njk"
         </div>
 
         <div class="spacer"></div>
-        <div class="row">
-            <div class="col-8 col-offset-2 text-center">
-                <p class="display-4">
-                    Community
-                </p>
-                <p class="lead">Basket is new and I develop it on my free time, so lot of things are still missing. Be patient and slowly but surely, more features will be added :)</p>
-                <p class="lead">Want to pitch in and help write code or documentation? Send in a <a href="https://github.com/Basket-CSS/basket/pulls">pull request</a>!</p>
+        <div class="row expandedRows">
+            <div class="col-12 text-center">
+                <div style="padding: 0 5%">
+                    <p class="display-4">
+                        Community
+                    </p>
+                    <p class="lead">Basket is new and I develop it on my free time, so lot of things are still missing. Be patient and slowly but surely, more features will be added :)</p>
+                    <p class="lead">Want to pitch in and help write code or documentation? Send in a <a href="https://github.com/Basket-CSS/basket/pulls">pull request</a>!</p>
+                
+                </div>
             </div>
         </div>
     </div>
