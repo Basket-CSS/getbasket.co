@@ -35,8 +35,16 @@ layout: "base.njk"
         width: 100% !important;
         min-height: 500px !important;
         height: 100% !important;
+        word-break: break-all;
     }
-    
+
+    .copyButton {
+        position: relative;
+        width: 100%;
+        text-align: right;
+        margin-bottom: -5em;
+    }
+
 
 </style>
 
@@ -94,14 +102,20 @@ layout: "base.njk"
             </div>
             <div class="col-8">
                 
-                <blockquote class="blockquote blockquote-blue">
-                    <p>&lt;!-- Basket CSS --&gt;</p>
-                    <p>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.0.0/dist/basket.min.css" integrity="sha256-RB6Eyql3c/sLFrGm+UkI8TgtwHz907Ww0lTXuYKU/ew=" crossorigin="anonymous"&gt;</p>
+                <blockquote class="blockquote bg-dark">
+                    <button class="btn btn-link copyButton text-light" onclick="copyText(this, '#includeCSS')">Copy 📋</button>
+                    <div id="includeCSS">
+                        <p>&lt;!-- Basket CSS --&gt;</p>
+                        <p>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.0.0/dist/basket.min.css" integrity="sha256-RB6Eyql3c/sLFrGm+UkI8TgtwHz907Ww0lTXuYKU/ew=" crossorigin="anonymous"&gt;</p>
+                    </div>
                 </blockquote>
 
-                <blockquote class="blockquote blockquote-blue">
-                    <p>&lt;!-- Basket JS --&gt;</p>
-                    <p>&lt;script src="https://cdn.jsdelivr.net/npm/getbasket@1.0.0/dist/basket.min.js" integrity="sha256-JzAWR97Yf75CpYAAcG8Z2r7b0l5Yc6BEvlLTVKqk1AA=" crossorigin="anonymous"&gt;&lt;/script&gt;</p>
+                <blockquote class="blockquote bg-dark">
+                    <button class="btn btn-link copyButton text-light" onclick="copyText(this, '#includeJS')">Copy 📋</button>
+                    <div id="includeJS">
+                        <p>&lt;!-- Basket JS --&gt;</p>
+                        <p>&lt;script src="https://cdn.jsdelivr.net/npm/getbasket@1.0.0/dist/basket.min.js" integrity="sha256-JzAWR97Yf75CpYAAcG8Z2r7b0l5Yc6BEvlLTVKqk1AA=" crossorigin="anonymous"&gt;&lt;/script&gt;</p>
+                    </div>   
                 </blockquote>
                 
             </div>
@@ -122,7 +136,7 @@ layout: "base.njk"
                     <span data-ty>Omitting a bunch of stuff...</span>
                     <span data-ty="progress"></span>
                     <span data-ty="input">cd basket</span>
-                    <span data-ty>Now go make as many changes your ❤️'s desires</span>
+                    <span data-ty>Now go make as many changes your ❤️ desires!</span>
                     <span data-ty="input">npm run build</span>
                     <span data-ty="input">echo "Profit $$$"</span>
                     <span data-ty>Profit $$$</span>
@@ -133,12 +147,12 @@ layout: "base.njk"
 
         <div class="spacer"></div>
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-8 col-offset-2 text-center">
                 <p class="display-4">
                     Community
                 </p>
-                <p class="lead">Basket is new and I develop on my free time, so lot of things are still missing. Be patient and slowly but surely, they will be added :)</p>
-                <p class="lead">Want to pitch in and help write code or documentation? Send in a pull request on <a href="https://github.com/Basket-CSS/basket/pulls">GitHub</a>!</p>
+                <p class="lead">Basket is new and I develop it on my free time, so lot of things are still missing. Be patient and slowly but surely, more features will be added :)</p>
+                <p class="lead">Want to pitch in and help write code or documentation? Send in a <a href="https://github.com/Basket-CSS/basket/pulls">pull request</a>!</p>
             </div>
         </div>
     </div>
@@ -147,28 +161,11 @@ layout: "base.njk"
 
 
 <script>
-    // retrieve the element
-    element = document.getElementById("logo");
 
-    // reset the transition by...
-    element.addEventListener("click", function (e) {
-        e.preventDefault;
-
-        // -> removing the class
-        element.classList.remove("swing-logo");
-
-        // -> triggering reflow /* The actual magic */
-        // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
-        // Oops! This won't work in strict mode. Thanks Felis Phasma!
-        // element.offsetWidth = element.offsetWidth;
-        // Do this instead:
-        void element.offsetWidth;
-
-        // -> and re-adding the class
-        element.classList.add("swing-logo");
-    }, false);
-
-   
+    window.onload = function() {
+        w3CodeColor(document.getElementById("includeCSS"));
+        w3CodeColor(document.getElementById("includeJS"));
+    }  
 
 </script>
 
