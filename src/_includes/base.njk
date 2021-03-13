@@ -10,7 +10,9 @@
         <meta name="description" content="A simple, minimalistic CSS framework">
 
         <!-- Basket CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.1.0/dist/basket.min.css" integrity="sha256-IWOm+tL019Um9ho4QNTToKAAZHfr8jWgMPIQyV/BgU8=" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.css" integrity="sha256-diZpcL3ZwrWdOSgIkTd9Lk7xorxHS4mT0I1UEfFi9a0=" crossorigin="anonymous">
+        
+        <!-- Termynal CSS -->
         <link rel="stylesheet" href="/assets/css/termynal.min.css">
 
         <style>
@@ -46,7 +48,7 @@
 
         <!-- Basket JS -->
 
-        <script src="https://cdn.jsdelivr.net/npm/getbasket@1.1.0/dist/basket.min.js" integrity="sha256-q8vG+1lziKwMsTBt8xhCBQsaMWmd7eW5U0EIjFqJxgE=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.js" integrity="sha256-komGclTLfPHDdN9BSMYuIajfQfyIHcEteQzTJWkJfKU=" crossorigin="anonymous"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -60,12 +62,13 @@
             let gitHubPath = 'Basket-CSS/basket'; // example repo
             let url = 'https://api.github.com/repos/' + gitHubPath + '/tags';
 
-            $.get(url).done(function (data) {
+            {# $.get(url).done(function (data) {
                 let versions = data.sort((v1, v2) => {
                     return semver.compare(v2.name, v1.name)
                 });
-                $('.latest-version').text(versions[0].name);
-            });
+                console.log(versions);
+                $('.latest-version').text(versions[0].name + " 🎉");
+            }); #}
 
             function fallbackCopyTextToClipboard(text) {
                 var textArea = document.createElement("textarea");

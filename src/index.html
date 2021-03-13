@@ -6,7 +6,7 @@ layout: "base.njk"
 
     #home-container {
         min-height: 55vh;
-        background: linear-gradient(145deg, var(--blue) 50%, #fff 50%);
+        background: linear-gradient(145deg, var(--blue) 50%, var(--dark) 50%);
     }
 
     #right-image {
@@ -22,8 +22,9 @@ layout: "base.njk"
         #right-image {
             display: none;
         }
-        .expandedRows {
-            flex-direction: column;
+        .expanded-rows > div {
+            width: 100% !important;
+            max-width: 100% !important;
         }
     }
 
@@ -53,7 +54,7 @@ layout: "base.njk"
 <main>
     <div id="home-container">
         <div class="container">
-            <div class="row expandedRows">
+            <div class="row expanded-rows">
                 <div class="col-6 text-light">
                     <h1>Basket Framework</h1>
                     <p class="lead">
@@ -95,7 +96,7 @@ layout: "base.njk"
                 </p>
             </div>
         </div>
-        <div class="row expandedRows">
+        <div class="row expanded-rows">
             <div class="col-4">
                 <p class="display-5">
                     jsDelivr
@@ -108,7 +109,7 @@ layout: "base.njk"
                     <button class="btn btn-link copyButton text-light" onclick="copyText(this, '#includeCSS')">Copy 📋</button>
                     <div id="includeCSS">
                         <p>&lt;!-- Basket CSS --&gt;</p>
-                        <p>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.1.0/dist/basket.min.css" integrity="sha256-IWOm+tL019Um9ho4QNTToKAAZHfr8jWgMPIQyV/BgU8=" crossorigin="anonymous"&gt;</p>
+                        <p>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.css" integrity="sha256-diZpcL3ZwrWdOSgIkTd9Lk7xorxHS4mT0I1UEfFi9a0=" crossorigin="anonymous"&gt;</p>
                     </div>
                 </blockquote>
 
@@ -116,14 +117,14 @@ layout: "base.njk"
                     <button class="btn btn-link copyButton text-light" onclick="copyText(this, '#includeJS')">Copy 📋</button>
                     <div id="includeJS">
                         <p>&lt;!-- Basket JS --&gt;</p>
-                        <p>&lt;script src="https://cdn.jsdelivr.net/npm/getbasket@1.1.0/dist/basket.min.js" integrity="sha256-q8vG+1lziKwMsTBt8xhCBQsaMWmd7eW5U0EIjFqJxgE=" crossorigin="anonymous"&gt;&lt;/script&gt;</p>
+                        <p>&lt;script src="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.js" integrity="sha256-komGclTLfPHDdN9BSMYuIajfQfyIHcEteQzTJWkJfKU=" crossorigin="anonymous"&gt;&lt;/script&gt;</p>
                     </div>   
                 </blockquote>
                 
             </div>
         </div>
 
-        <div class="row expandedRows">
+        <div class="row expanded-rows">
             <div class="col-4">
                 <p class="display-5">
                     Source
@@ -148,14 +149,14 @@ layout: "base.njk"
         </div>
 
         <div class="spacer"></div>
-        <div class="row expandedRows">
-            <div class="col-12 text-center">
+        <div class="row">
+            <div class="col-10 col-offset-1 text-center">
                 <div style="padding: 0 5%">
                     <p class="display-4">
                         Community
                     </p>
-                    <p class="lead">Basket is new and I develop it on my free time, so lot of things are still missing. Be patient and slowly but surely, more features will be added :)</p>
-                    <p class="lead">Want to pitch in and help write code or documentation? Send in a <a href="https://github.com/Basket-CSS/basket/pulls">pull request</a>!</p>
+                    <p>Basket is new and I develop it on my free time, so lot of things are still missing. Be patient and slowly but surely, more features will be added :)</p>
+                    <p>Want to pitch in and help write code or documentation? Send in a <a href="https://github.com/Basket-CSS/basket/pulls">pull request</a>!</p>
                 
                 </div>
             </div>

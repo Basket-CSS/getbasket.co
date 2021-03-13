@@ -69,6 +69,20 @@ layout: "base.njk"
         margin: 0 auto;
         text-align: right;
     }
+
+    .example .column-demo {
+        background: var(--grey);
+        border-radius: 5px;
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        height: 40px;
+        letter-spacing: .1rem;
+        line-height: 3rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+    }
+
 </style>
 
 <div class="hero hero-lg bg-grey align-items-center text-center">
@@ -81,6 +95,24 @@ layout: "base.njk"
             </label>
         </div>
         <h1>Documentation Coming Soon.</h1>
+    </div>
+</div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="example">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8">
+                            <span class="column-demo">.col-8</span>
+                        </div>
+                        <div class="col-4">
+                            <span class="column-demo">.col-4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
