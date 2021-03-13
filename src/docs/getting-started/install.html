@@ -1,0 +1,49 @@
+---
+layout: "docs_base.njk"
+---
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <p class="display-4">Installation / Setup</p>
+            <p class="lead">There are a couple ways to install / use Basket, the recommended way is a CDN but you can manually download and incldue it in your project as well. Here are the options:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 expanded-column padding-1">
+            <p class="display-5">Just the <span class="text-blue">CSS</span></p>
+            <p>This is what most users will need, only use the Saas method if you would like to modify the CSS framework.</p>
+            <p class="lead">CDN Links (recommended)</p>
+            <pre>
+                <code class="html">&lt;!-- Basket CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.css" integrity="sha256-diZpcL3ZwrWdOSgIkTd9Lk7xorxHS4mT0I1UEfFi9a0=" crossorigin="anonymous"&gt;</code>
+            </pre>
+
+            <pre>
+                <code class="html">&lt;!-- Basket JS --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.js" integrity="sha256-komGclTLfPHDdN9BSMYuIajfQfyIHcEteQzTJWkJfKU=" crossorigin="anonymous"&gt;&lt;/script&gt;</code>
+            </pre>
+
+            <p class="lead">GitHub Releases (manual)</p>
+            <p>You can download the latest zip file from GitHub. Unzip the file and place the <code>/dist</code> folder into your project (or just copy the files you need over manually).</p>
+            <a href="https://github.com/Basket-CSS/basket/releases" class="btn btn-dark">Download ZIP</a>
+        </div>
+        <div class="col-6 expanded-column">
+            <p class="display-5"><span class="text-red">Sass</span> for Developers</p>
+            <p>You probably know what you are doing if you know what Sass is, if not; this method is for modifying the framework.</p>
+            <p class="lead">Package Managers (recommended)</p>
+            <p>You'll need npm for this. <a href="https://www.npmjs.com/package/getbasket">Here</a> is our NPM package page.</p>
+            <pre>
+                <code class="bash">npm install getbasket</code>
+            </pre>
+
+            <p class="lead">GitHub</p>
+            <pre>
+                <code class="bash">
+git clone https://github.com/Basket-CSS/basket.git
+cd basket
+npm install && npm run build</code>
+            </pre>
+        </div>
+    </div>
+</div>

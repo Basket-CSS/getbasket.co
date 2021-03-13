@@ -1,118 +1,26 @@
 ---
-layout: "base.njk"
+layout: "docs_base.njk"
 ---
-
-<style>
-    .switch {
-        position: relative;
-        display: inline-block;
-        width: 40px;
-        height: 24px;
-    }
-
-    .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    .slider:before {
-        position: absolute;
-        content: "";
-        height: 16px;
-        width: 16px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
-    }
-
-    input:checked+.slider {
-        background-color: #2196F3;
-    }
-
-    input:focus+.slider {
-        box-shadow: 0 0 1px #2196F3;
-    }
-
-    input:checked+.slider:before {
-        -webkit-transform: translateX(16px);
-        -ms-transform: translateX(16px);
-        transform: translateX(16px);
-    }
-
-    /* Rounded sliders */
-    .slider.round {
-        border-radius: 34px;
-    }
-
-    .slider.round:before {
-        border-radius: 50%;
-    }
-
-    .darkmode-switch {
-        /* position: fixed; */
-        padding: 2em;
-        margin: 0 auto;
-        text-align: right;
-    }
-
-    .example .column-demo {
-        background: var(--grey);
-        border-radius: 5px;
-        display: block;
-        font-size: 1rem;
-        font-weight: 600;
-        height: 40px;
-        letter-spacing: .1rem;
-        line-height: 3rem;
-        margin-bottom: 2.5rem;
-        text-align: center;
-    }
-
-</style>
-
-<div class="hero hero-lg bg-grey align-items-center text-center">
-    <div class="hero-body">
-        <div class="darkmode-switch">
-            Dark Mode Toggle
-            <label class="switch">
-                <input class="darkmode-toggler" type="checkbox">
-                <span class="slider round"></span>
-            </label>
-        </div>
-        <h1>Documentation Coming Soon.</h1>
-    </div>
-</div>
 
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <div class="example">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-8">
-                            <span class="column-demo">.col-8</span>
-                        </div>
-                        <div class="col-4">
-                            <span class="column-demo">.col-4</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="display-4">Getting Started</p>
+            <p class="lead"><b>Basket</b> is a simple and minimal CSS framework which is designed to allow a fast and clean design implementation to your site, without getting in the way.</p>
+            <p class="lead">By default, Basket provides very simple styling with colourful variants, and utilities to help speed up your work flow.</p>
+            <p class="lead">If you are here for <b>dark mode</b>, jump to that section <a href="/docs/getting-started/dark-mode">here</a>. If not, here are some <i>possibly</i> useful links:</p>
+        </div>
+        <div class="col-6 padding-1">
+            <a href="/docs/getting-started/install" class="btn btn-lg btn-dark btn-block">Installation</a>
+        </div>
+        <div class="col-6 padding-1">
+            <a href="/docs/getting-started/usage" class="btn btn-lg btn-dark btn-block">Usage</a>
+        </div>
+        <div class="col-6 padding-1">
+            <a href="/docs/elements" class="btn btn-lg btn-dark btn-block">Elements</a>
+        </div>
+        <div class="col-6 padding-1">
+            <a href="/docs/components" class="btn btn-lg btn-dark btn-block">Components</a>
         </div>
     </div>
 </div>

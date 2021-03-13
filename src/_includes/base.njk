@@ -12,6 +12,8 @@
         <!-- Basket CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.css" integrity="sha256-diZpcL3ZwrWdOSgIkTd9Lk7xorxHS4mT0I1UEfFi9a0=" crossorigin="anonymous">
         
+        <link rel="stylesheet" href="/assets/css/atom-one-dark.css">
+
         <!-- Termynal CSS -->
         <link rel="stylesheet" href="/assets/css/termynal.min.css">
 
@@ -21,6 +23,10 @@
             }
             .navDownloadButton:hover {
                 background: var(--dark-hover) !important;
+            }
+            pre, pre>code {
+                background: var(--dark);
+                white-space: pre-wrap;
             }
         </style>
 
@@ -57,80 +63,10 @@
         <script src="/assets/js/code-highlight.js"></script>
 
         <script src="/assets/js/termynal.min.js"></script>
-        <script>
 
-            let gitHubPath = 'Basket-CSS/basket'; // example repo
-            let url = 'https://api.github.com/repos/' + gitHubPath + '/tags';
-
-            {# $.get(url).done(function (data) {
-                let versions = data.sort((v1, v2) => {
-                    return semver.compare(v2.name, v1.name)
-                });
-                console.log(versions);
-                $('.latest-version').text(versions[0].name + " 🎉");
-            }); #}
-
-            function fallbackCopyTextToClipboard(text) {
-                var textArea = document.createElement("textarea");
-                textArea.value = text;
-
-                // Avoid scrolling to bottom
-                textArea.style.top = "0";
-                textArea.style.left = "0";
-                textArea.style.position = "fixed";
-
-                document
-                    .body
-                    .appendChild(textArea);
-                textArea.focus();
-                textArea.select();
-
-                try {
-                    var successful = document.execCommand('copy');
-                    var msg = successful
-                        ? 'successful'
-                        : 'unsuccessful';
-                    console.log('Fallback: Copying text command was ' + msg);
-                } catch (err) {
-                    console.error('Fallback: Oops, unable to copy', err);
-                }
-
-                document
-                    .body
-                    .removeChild(textArea);
-            }
-            function copyTextToClipboard(text) {
-                if (!navigator.clipboard) {
-                    fallbackCopyTextToClipboard(text);
-                    return;
-                }
-                navigator
-                    .clipboard
-                    .writeText(text)
-                    .then(function () {
-                        console.log('Async: Copying to clipboard was successful!');
-                    }, function (err) {
-                        console.error('Async: Could not copy text: ', err);
-                    });
-            }
-
-            function copyText(el, textEl) {
-                el.innerText = "Copied! 📋";
-                try {
-                    let text = document.querySelector(textEl).innerText;
-                    copyTextToClipboard(text);
-                } catch (e) {
-                }
-                
-            }
-
-            let termynal = new Termynal('.termynal', {
-                cursor: "|",
-                progressLength: 20,
-                noInit: true
-            });
-
-            termynal.init();
-        </script>
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.6.0/build/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/RickStrahl/highlightjs-badge/highlightjs-badge.min.js"></script>
+        
+        <script src="/assets/js/main.js"></script>
     </body>
 </html>

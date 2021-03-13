@@ -37,7 +37,6 @@ layout: "base.njk"
         --color-text: white;
         --color-text-subtle: var(--blue);
         width: 100% !important;
-        min-height: 500px !important;
         height: 100% !important;
         word-break: break-all;
     }
@@ -47,6 +46,7 @@ layout: "base.njk"
         width: 100%;
         text-align: right;
         margin-bottom: -5em;
+        color: white;
     }
 
 </style>
@@ -105,21 +105,15 @@ layout: "base.njk"
             </div>
             <div class="col-8">
                 
-                <blockquote class="blockquote bg-dark">
-                    <button class="btn btn-link copyButton text-light" onclick="copyText(this, '#includeCSS')">Copy 📋</button>
-                    <div id="includeCSS">
-                        <p>&lt;!-- Basket CSS --&gt;</p>
-                        <p>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.css" integrity="sha256-diZpcL3ZwrWdOSgIkTd9Lk7xorxHS4mT0I1UEfFi9a0=" crossorigin="anonymous"&gt;</p>
-                    </div>
-                </blockquote>
-
-                <blockquote class="blockquote bg-dark">
-                    <button class="btn btn-link copyButton text-light" onclick="copyText(this, '#includeJS')">Copy 📋</button>
-                    <div id="includeJS">
-                        <p>&lt;!-- Basket JS --&gt;</p>
-                        <p>&lt;script src="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.js" integrity="sha256-komGclTLfPHDdN9BSMYuIajfQfyIHcEteQzTJWkJfKU=" crossorigin="anonymous"&gt;&lt;/script&gt;</p>
-                    </div>   
-                </blockquote>
+                <pre>
+                    <code class="html">&lt;!-- Basket CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.css" integrity="sha256-diZpcL3ZwrWdOSgIkTd9Lk7xorxHS4mT0I1UEfFi9a0=" crossorigin="anonymous"&gt;</code>
+                </pre>
+    
+                <pre>
+                    <code class="html">&lt;!-- Basket JS --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.js" integrity="sha256-komGclTLfPHDdN9BSMYuIajfQfyIHcEteQzTJWkJfKU=" crossorigin="anonymous"&gt;&lt;/script&gt;</code>
+                </pre>
                 
             </div>
         </div>
@@ -134,11 +128,8 @@ layout: "base.njk"
             <div class="col-8">
                 
                 <div class="termynal" data-termynal>
-                    <span data-ty="input">git clone https://github.com/Basket-CSS/basket.git</span>
-                    <span data-ty>Cloning into 'basket'...</span>
-                    <span data-ty>Omitting a bunch of stuff...</span>
+                    <span data-ty="input">npm install basket</span>
                     <span data-ty="progress"></span>
-                    <span data-ty="input">cd basket</span>
                     <span data-ty>Now go make as many changes your ❤️ desires!</span>
                     <span data-ty="input">npm run build</span>
                     <span data-ty="input">echo "Profit $$$"</span>
@@ -169,8 +160,14 @@ layout: "base.njk"
 <script>
 
     window.onload = function() {
-        w3CodeColor(document.getElementById("includeCSS"));
-        w3CodeColor(document.getElementById("includeJS"));
+        let termynal = new Termynal('.termynal', {
+            cursor: "|",
+            progressLength: 20,
+            noInit: true
+        });
+    
+        termynal.init();
+
     }  
 
 </script>

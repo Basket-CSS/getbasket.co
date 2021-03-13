@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basket CSS Framework</title>
+
+        <meta name="author" content="Omar Quazi">
+        <meta name="description" content="A simple, minimalistic CSS framework">
+
+        <!-- Basket CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.css" integrity="sha256-diZpcL3ZwrWdOSgIkTd9Lk7xorxHS4mT0I1UEfFi9a0=" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="/assets/css/atom-one-dark.css">
+
+        <style>
+            .navDownloadButton {
+                background: var(--dark);
+            }
+            .navDownloadButton:hover {
+                background: var(--dark-hover) !important;
+            }
+
+            aside {
+                min-height: calc(100vh - 55px);
+            }
+
+            aside ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            main > div > section {
+                margin-bottom: 2.5rem;
+            }
+
+            .main-links > li > a {
+                font-weight: 500;
+            }
+
+            .sub-links > li > a {
+                text-decoration: none;
+            }
+
+            .sub-links > li > a.active {
+                font-weight: 500;
+            }
+
+            .copyButton {
+                position: relative;
+                width: 100%;
+                text-align: right;
+                margin-bottom: -5em;
+                color: white;
+            }
+
+            @media (max-width: 42.0rem) {
+                aside {
+                    display: none;
+                }
+                .expanded-column {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                }
+
+            }
+
+            pre, pre>code {
+                background: var(--dark);
+                white-space: pre-wrap;
+            }
+
+            
+        </style>
+
+    </head>
+    <body>
+
+        <header>
+            <nav class="navbar navbar-blue">
+                <a href="/" class="navbar-brand">
+                    <img src="/assets/imgs/basket-logo-white.png" width="25" height="25"/>
+                    Basket
+                </a>
+                <a class="navbar-collapse">&#9776;</a>
+                <div class="navbar-items navbar-right">
+                    <a href="/docs/" class="{{ 'active' if '/docs/' in page.url }}">Documentation</a>
+                    <a href="/docs/examples" class="{{ 'active' if '/docs/examples' == page.url }}">Kitchen Sink</a>
+                    <a target="_blank" class="navDownloadButton latest-version" href="https://github.com/Basket-CSS/basket">Repo</a>
+                </div>
+            </nav>
+
+        </header>
+
+        <main class="container-fluid">
+            <div class="row">
+                <aside class="col-3 bg-grey padding-1">
+                    <ul class="main-links">
+                        <li>
+                            <a class="btn btn-link" data-dropdown="#getting-started">Getting Started</a>
+                            <ul id="#getting-started" class="sub-links {{ '' if '/docs/getting-started/' in page.url or '/docs/' == page.url else 'hidden' }} padding-1">
+                                <li>
+                                    <a class="text-muted {{ 'active' if '/docs/' == page.url }}" href="/docs/">Overview</a>
+                                </li>
+                                <li>
+                                    <a class="text-muted {{ 'active' if '/install' in page.url }}" href="/docs/getting-started/install">Installation</a>
+                                </li>
+                                <li>
+                                    <a class="text-muted {{ 'active' if '/usage' in page.url }}" href="/docs/getting-started/usage">Usage</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="btn btn-link" data-dropdown="#layout">Layout</a>
+                            <ul id="#layout" class="sub-links {{ '' if '/docs/layout/' in page.url else 'hidden' }} padding-1">
+                                <li>
+                                    <a class="text-muted {{ 'active' if '/test' in page.url }}" href="/docs/">Coming Soon</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="btn btn-link" data-dropdown="#elements">Elements</a>
+                            <ul id="#elements" class="sub-links {{ '' if '/docs/elements/' in page.url else 'hidden' }} padding-1">
+                                <li>
+                                    <a class="text-muted {{ 'active' if '/test' in page.url }}" href="/docs/">Coming Soon</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="btn btn-link" data-dropdown="#components">Components</a>
+                            <ul id="#components" class="sub-links {{ '' if '/docs/components/' in page.url else 'hidden' }} padding-1">
+                                <li>
+                                    <a class="text-muted {{ 'active' if '/test' in page.url }}" href="/docs/">Coming Soon</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="btn btn-link" data-dropdown="#utilities">Utilities</a>
+                            <ul id="#utilities" class="sub-links {{ '' if '/docs/utilities/' in page.url else 'hidden' }} padding-1">
+                                <li>
+                                    <a class="text-muted {{ 'active' if '/test' in page.url }}" href="/docs/">Coming Soon</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+                <section class="col-9 expanded-column">
+                    {{ content | safe }}                
+                </section>
+            </div>
+        </main>
+
+        
+
+        <!-- Basket JS -->
+
+        <script src="https://cdn.jsdelivr.net/npm/getbasket@1.1.1/dist/basket.min.js" integrity="sha256-komGclTLfPHDdN9BSMYuIajfQfyIHcEteQzTJWkJfKU=" crossorigin="anonymous"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+        <script src="https://rawgit.com/hippich/bower-semver/master/semver.min.js"></script>
+        
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.6.0/build/highlight.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/RickStrahl/highlightjs-badge/highlightjs-badge.min.js"></script>
+
+        <script src="/assets/js/main.js"></script>
+
+    </body>
+</html>
