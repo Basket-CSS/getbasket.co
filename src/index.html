@@ -22,10 +22,6 @@ layout: "base.njk"
         #right-image {
             display: none;
         }
-        .expanded-rows > div {
-            width: 100% !important;
-            max-width: 100% !important;
-        }
     }
 
     .spacer {
@@ -54,8 +50,8 @@ layout: "base.njk"
 <main>
     <div id="home-container">
         <div class="container">
-            <div class="row expanded-rows">
-                <div class="col-6 text-light">
+            <div class="row">
+                <div class="col col-6 col-expand text-light">
                     <h1>Basket Framework</h1>
                     <p class="lead">
                         A simple, minimalistic framework.
@@ -67,7 +63,7 @@ layout: "base.njk"
                         <a class="btn btn-dark btn-rounded" href="/docs">Getting Started</a> <a class="btn btn-light btn-rounded" href="https://github.com/Basket-CSS/basket/releases">Download</a>
                     </p> 
                 </div>
-                <div id="right-image" class="col-6">
+                <div id="right-image" class="col col-6">
                     <div class="img-responsive">
                         <img src="/assets/imgs/undraw_static_assets_rpm6.svg" alt="">
                     </div>
@@ -78,7 +74,7 @@ layout: "base.njk"
     
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col col-12 text-center">
                 <p class="display-4">
                     So why Basket?
                 </p>
@@ -90,20 +86,20 @@ layout: "base.njk"
         </div>
         <div class="spacer"></div>
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col col-12 text-center">
                 <p class="display-4">
                     Installation
                 </p>
             </div>
         </div>
-        <div class="row expanded-rows">
-            <div class="col-4">
+        <div class="row">
+            <div class="col col-4 col-expand">
                 <p class="display-5">
                     jsDelivr
                 </p>
                 <p class="text-muted">You most probably need this one</p>
             </div>
-            <div class="col-8">
+            <div class="col col-8 col-expand">
                 
                 <pre>
                     <code class="html">&lt;!-- Basket CSS --&gt;
@@ -118,14 +114,14 @@ layout: "base.njk"
             </div>
         </div>
 
-        <div class="row expanded-rows">
-            <div class="col-4">
+        <div class="row">
+            <div class="col col-4 col-expand">
                 <p class="display-5">
                     Source
                 </p>
                 <p class="text-muted">Get this if you need to modify the basket framework; add custom colours, remove code you don't need, etc.</p>
             </div>
-            <div class="col-8">
+            <div class="col col-8 col-expand">
                 
                 <div class="termynal" data-termynal>
                     <span data-ty="input">npm install basket</span>
@@ -141,7 +137,7 @@ layout: "base.njk"
 
         <div class="spacer"></div>
         <div class="row">
-            <div class="col-10 col-offset-1 text-center">
+            <div class="col col-10 col-offset-1 text-center">
                 <div style="padding: 0 5%">
                     <p class="display-4">
                         Community
