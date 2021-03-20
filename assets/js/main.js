@@ -2,14 +2,13 @@ window.addEventListener('load', (event) => {
     let gitHubPath = 'Basket-CSS/basket'; // example repo
     let url = 'https://api.github.com/repos/' + gitHubPath + '/tags';
 
-    $.get(url).done(function (data) {
-        let versions = data.sort((v1, v2) => {
-            return semver.compare(v2.name, v1.name)
-        });
-        console.log(versions);
-        $('.latest-version').text(versions[0].name + " 🎉");
-    });
-    
+    // $.get(url).done(function (data) {
+    //     let versions = data.sort((v1, v2) => {
+    //         return semver.compare(v2.name, v1.name)
+    //     });
+    //     console.log(versions);
+    //     $('.latest-version').text(versions[0].name + " 🎉");
+    // });    
 
     // Dropdown implementation not part of Basket yet,
     // will implement later but for now here is the work around:
@@ -20,19 +19,16 @@ window.addEventListener('load', (event) => {
         });
     });  
 
-
     // apply HighlightJS
     var pres = document.querySelectorAll("pre>code");
     for (var i = 0; i < pres.length; i++) {
        hljs.highlightBlock(pres[i]);
     }
     
-    // add HighlightJS-badge (options are optional)
+    // add HighlightJS-badge
     var options = {   // optional
        copyIconContent: "📋",
        checkIconContent: "✔️"
     };
     window.highlightJsBadge(options);
-
-
 });

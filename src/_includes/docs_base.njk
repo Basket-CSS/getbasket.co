@@ -63,10 +63,6 @@
                 aside {
                     display: none;
                 }
-                .expanded-column {
-                    width: 100% !important;
-                    max-width: 100% !important;
-                }
 
             }
 
@@ -75,7 +71,23 @@
                 white-space: pre-wrap;
             }
 
-            
+            footer {
+                margin: 2em 0em;
+            }
+
+            .grid-sample>.row>div>div {
+                background: var(--grey);
+                border-radius: 5px;
+                display: block;
+                font-size: 1.2rem;
+                font-weight: 600;
+                height: 40px;
+                letter-spacing: .1rem;
+                line-height: 4rem;
+                margin-bottom: 1.0rem;
+                text-align: center;
+                /*margin: 0.5rem;*/
+            } 
         </style>
 
     </head>
@@ -113,13 +125,16 @@
                                 <li>
                                     <a class="text-muted {{ 'active' if '/usage' in page.url }}" href="/docs/getting-started/usage">Usage</a>
                                 </li>
+                                <li>
+                                    <a class="text-muted {{ 'active' if '/dark-mode' in page.url }}" href="/docs/getting-started/dark-mode">Dark Mode</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <a class="btn btn-link" data-dropdown="#layout">Layout</a>
                             <ul id="#layout" class="sub-links {{ '' if '/docs/layout/' in page.url else 'hidden' }} padding-1">
                                 <li>
-                                    <a class="text-muted {{ 'active' if '/test' in page.url }}" href="/docs/">Coming Soon</a>
+                                    <a class="text-muted {{ 'active' if '/flexbox' in page.url }}" href="/docs/layout/flexbox">Flexbox Grid</a>
                                 </li>
                             </ul>
                         </li>
@@ -149,18 +164,22 @@
                         </li>
                     </ul>
                 </aside>
-                <section class="col col-9 expanded-column">
+                <section class="col col-9 col-expand">
                     {{ content | safe }}                
                 </section>
             </div>
         </main>
 
         <footer>
-            <div class="container"></div>
-
-            Saw a typo or a mistake? Something can be improved?
-            <br />
-            Help us improve the page <a href="https://github.com/Basket-CSS/getbasket.co/tree/master/src/{{ page.url.slice(1, -1) }}.html">here</a>.
+            <div class="container">
+                <div class="row">
+                    <div class="col col-12 col-expand text-center">
+                        See a typo or a mistake? Or something that can be improved?
+                        <br />
+                        Help us improve the page <a target="_blank" href="https://github.com/Basket-CSS/getbasket.co/tree/master/src/{{ page.url.slice(1, -1) }}.html">here</a>.
+                    </div>
+                </div>
+            </div>
         </footer>
 
         <!-- Basket JS -->

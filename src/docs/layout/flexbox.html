@@ -1,0 +1,229 @@
+---
+layout: "docs_base.njk"
+---
+
+<div class="container">
+    <div class="row">
+        <div class="col col-12">
+            <p class="display-4">Flexbox Grid</p>
+            <p class="lead">This page will detail out the flexbox grid that is built into Basket and some of the features it offers.</p>
+            <p>Please keep in mind, the framework is constantly changing and evolving so keep an eye on this documentation to stay up to day!</p>
+        </div>
+        <div class="col col-12">
+            <p class="display-5">Containers</p>
+            <p class="lead">Containers increase and decrease in size as the size of the browser window changes responsively.</p>
+            <p>
+                There are two major container's used in Basket, the restricted width <code>.container</code> and the full width <code>.container-fluid</code>.
+                As the name's suggest the <code>.container</code> class is for smaller containers with a fixed maximum width of 1280px.
+                The class <code>.container-fluid</code> is a fluid width and expands to 100% of the viewport's width; this was added in addition to 
+                <code>.container</code> to allow developers more control over the entire layout if needed.
+            </p>
+        </div>
+        <div class="col col-12">
+            <p class="display-5">Columns</p>
+            <p class="lead">
+                Columns use a 12 grid system to allow a simple transition from many other frameworks. For additional flexability (no pun intended),
+                basket can be easily converted into a 9 or even 16 grid system using the source. On the other hand, here is a little preview of the 12 grid system:
+            </p>
+            <p>
+                Keep in mind, by default once the mobile breakpoint is hit the column's automatically move to the next row but maintain their respective sizes.
+                This enables a better set of controls and keeps offset's in place as well. Here is an example without a column expand and the 
+                <a target="_blank" href="https://jsfiddle.net/blacksector/hw2t5dma/">source for it</a>. 
+            </p>
+        </div>
+    </div>
+</div>
+<div class="grid-sample container-fluid">
+    <div class="row">
+        <div class="col col-10">
+            <div>.col-10</div>
+        </div>
+        <div class="col col-2">
+            <div>.col-2</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-9">
+            <div>.col-9</div>
+        </div>
+        <div class="col col-3">
+            <div>.col-3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-8">
+            <div>.col-8</div>
+        </div>
+        <div class="col col-4">
+            <div>.col-4</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-7">
+            <div>.col-7</div>
+        </div>
+        <div class="col col-5">
+            <div>.col-5</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-6">
+            <div>.col-6</div>
+        </div>
+        <div class="col col-6">
+            <div>.col-6</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div>.col</div>
+        </div>
+        <div class="col col-auto">
+            <div>.col-auto</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-12">
+            <p class="display-5">Expanded Columns</p>
+            <p class="lead">
+                In the event that you would like column's to expand to full width you must use the <code>.col-expand</code> class along with the column classes. 
+                Here is an example with column's expanded on mobile; as this is mobile only, desktop's will not see the difference unless you shrink your window.
+            </p>
+            <p>
+                Keep in mind, each <code>.col-expand</code> only applies for it's respective column allowing even more fine grained control. 
+                Here is an example with a mixture of columns, and as always, <a target="_blank" href="https://jsfiddle.net/blacksector/jczLwdse/">here is the source</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="grid-sample container-fluid">
+    <div class="row">
+        <div class="col col-9 col-expand">
+            <div>.col-9</div>
+        </div>
+        <div class="col col-3 col-expand">
+            <div>.col-3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-8">
+            <div>.col-8</div>
+        </div>
+        <div class="col col-4 col-expand">
+            <div>.col-4</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-7">
+            <div>.col-7</div>
+        </div>
+        <div class="col col-5">
+            <div>.col-5</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-12">
+            <p class="display-5">Non Padded Columns</p>
+            <p class="lead">
+               All of the columns come with a small padding (1 em). To accomodate for those who may want even more control of their grids, the 
+               <code>.col-no-padding</code> class allows for a simple way to expand columns to their full width with no padding. Here is an example
+               <a target="_blank" href="https://jsfiddle.net/blacksector/j72r38fy/">with the source</a>.
+            </p>
+            <p>
+                This doesn't look the prettiest, unless you really know what you are doing, so unless you really need it, there is no reason for you to use this class.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="grid-sample container-fluid">
+    <div class="row">
+        <div class="col col-9 col-no-padding">
+            <div style="border: 1px solid var(--dark);">.col-9</div>
+        </div>
+        <div class="col col-3 col-no-padding col-expand">
+            <div style="border: 1px solid var(--dark);">.col-3</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-8">
+            <div style="border: 1px solid var(--dark);">.col-8</div>
+        </div>
+        <div class="col col-4 col-no-padding col-expand">
+            <div style="border: 1px solid var(--dark);">.col-4</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-7">
+            <div style="border: 1px solid var(--dark);">.col-7</div>
+        </div>
+        <div class="col col-5">
+            <div style="border: 1px solid var(--dark);">.col-5</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col col-12">
+            <p class="display-5">Column Offset</p>
+            <p class="lead">
+                As customary to most css frameworks, there are offsets as well! Offsets can be set using a <code>.col-offset-*</code> class. The <code>*</code>
+                is any number from 1 - 12.
+            </p>
+            <p>
+                Please keep in mind, column offsets do <b>NOT</b> play well with <code>.col-expand</code> as it would defeat the purpose of the offset.
+                Here is an example and of course the <a target="_blank" href="https://jsfiddle.net/blacksector/g6h0xoe5/">sample</a></p>.
+        </div>
+    </div>
+</div>
+
+<div class="grid-sample container-fluid">
+    <div class="row">
+        <div class="col col-2">
+            <div>.col-2</div>
+        </div>
+        <div class="col col-4 col-offset-4">
+            <div>.col-4 .col-offset-4</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-2">
+            <div>.col-2</div>
+        </div>
+        <div class="col col-4 col-offset-6">
+            <div>.col-4 .col-offset-6</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-4 col-offset-6">
+            <div>.col-4 .col-offset-6</div>
+        </div>
+        <div class="col col-2">
+            <div>.col-2</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-4 col-offset-3">
+            <div>.col-4 .col-offset-3</div>
+        </div>
+        <div class="col col-3 col-offset-2">
+            <div>.col-2 .col-offset-2</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-5 col-offset-1">
+            <div>.col-5 .col-offset-1</div>
+        </div>
+        <div class="col col-3">
+            <div>.col-2</div>
+        </div>
+    </div>
+</div>
