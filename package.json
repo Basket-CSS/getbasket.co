@@ -4,7 +4,8 @@
   "description": "Basket framework website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eleventy --serve"
   },
   "author": "Omar Quazi <omar@quazi.co>",
   "license": "MIT",
